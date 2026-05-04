@@ -109,6 +109,7 @@ main{max-width:1100px;margin:0 auto;padding:1.5rem;}
 
 .cl-grid{display:grid;grid-template-columns:1fr 380px;gap:13px;}
 @media(max-width:780px){.cl-grid{grid-template-columns:1fr;}}
+@media(max-width:700px){.tpl-grid{grid-template-columns:1fr !important;}}
 
 /* Items cochables */
 .clist{display:flex;flex-direction:column;gap:6px;}
@@ -269,8 +270,7 @@ main{max-width:1100px;margin:0 auto;padding:1.5rem;}
      ONGLET 3 — MON MODÈLE (TEMPLATE)
 ═══════════════════════════════════════ -->
 <div id="tab-tpl" class="tc">
-  <div style="display:grid;grid-template-columns:1fr 360px;gap:13px">
-    @media(max-width:700px){display:block}
+  <div class="tpl-grid" style="display:grid;grid-template-columns:1fr 360px;gap:13px">
 
     <!-- Liste du modèle -->
     <div>
