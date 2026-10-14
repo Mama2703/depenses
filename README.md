@@ -1,100 +1,86 @@
 # 📒 Mon Carnet de Dépenses
 
-Une application web simple pour gérer ses dépenses mensuelles — accessible sur téléphone, tablette et ordinateur, sans installation.
+Une application web simple pour gérer ses dépenses mensuelles — sur téléphone, tablette et ordinateur, sans compte ni installation.
 
----
-
-## 🚀 Accès rapide
-
-> **Lien :** `https://TON-PSEUDO.github.io/depenses`
-> *(remplace TON-PSEUDO par ton nom d'utilisateur GitHub)*
+**👉 https://mama2703.github.io/depenses/**
 
 ---
 
 ## ✨ Fonctionnalités
 
-- **Saisie des dépenses** : description, montant, catégorie et date
-- **Navigation mensuelle** : consulter et modifier n'importe quel mois
-- **Budget mensuel** : définir un budget et voir ce qu'il reste en temps réel
-- **Graphiques** : répartition en camembert par catégorie, barres de proportion, évolution sur 12 mois
-- **Tri** : trier les dépenses par date ou par montant
-- **Sauvegarde automatique** dans le navigateur (localStorage)
-- **Export / Import CSV** : compatible Excel et Google Sheets
-- **Sauvegarde / Restauration JSON** : pour transférer ses données entre appareils
+### 📊 Dépenses
+- Saisie rapide : description, montant (virgule ou point), catégorie, date — touche **Entrée** pour valider
+- **Modifier une dépense** en la touchant ; **supprimer** avec possibilité d'**annuler**
+- Suggestions de descriptions déjà utilisées (la catégorie se remplit toute seule)
+- La dépense est rangée dans le **mois de sa date**
+- **Budget mensuel** : repris automatiquement le mois suivant, modifiable mois par mois
+- Comparaison avec le mois précédent, moyenne par dépense, jauge du budget
+- Graphiques : répartition par catégorie, évolution sur 12 mois (touche une barre pour aller à ce mois ; barre rouge = budget dépassé)
+
+### ✅ À payer
+- Liste des dépenses récurrentes du mois, à cocher au fur et à mesure
+- **Cocher une ligne l'ajoute automatiquement dans Dépenses**, la décocher l'en retire
+- Dépenses ponctuelles (seulement ce mois-ci)
+
+### 📋 Mon modèle
+- Liste de tes dépenses qui reviennent chaque mois (loyer, abonnements…)
+- Modifier le modèle met à jour **le mois actuel et les suivants** ; les **mois passés gardent leur historique**
+
+### Et aussi
+- **Mode sombre** (automatique, ou à choisir dans le menu « Données »)
+- **Fonctionne hors connexion** une fois installée
+- Navigation par mois commune aux onglets, bouton « Mois actuel »
 
 ---
 
-## 📂 Catégories disponibles
+## 📂 Catégories
 
-| Catégorie | Couleur |
-|-----------|---------|
-| 🏠 Logement | Vert foncé |
-| 🛒 Alimentation | Ocre |
-| 🚗 Transport | Bleu |
-| 💊 Santé | Vert menthe |
-| 🎬 Loisirs | Violet |
-| 👗 Vêtements | Rose |
-| 📱 Abonnements | Bleu clair |
-| 💰 Épargne | Vert clair |
-| 📦 Autre | Gris |
+🏠 Logement · 🛒 Alimentation · 🚗 Transport · 💊 Santé · 🎬 Loisirs · 👗 Vêtements · 📱 Abonnements · 💰 Épargne · 📦 Autre
 
 ---
 
 ## 📱 Installer l'appli sur son téléphone
 
-### iPhone / iPad (Safari)
-1. Ouvrir le lien dans Safari
-2. Appuyer sur le bouton **Partager** (carré avec flèche)
-3. Choisir **"Sur l'écran d'accueil"**
-4. Appuyer sur **Ajouter**
+**iPhone (Safari)** : ouvrir le lien → bouton **Partager** → **Sur l'écran d'accueil** → **Ajouter**
 
-### Android (Chrome)
-1. Ouvrir le lien dans Chrome
-2. Appuyer sur le menu **⋮** (trois points)
-3. Choisir **"Ajouter à l'écran d'accueil"**
-4. Confirmer
-
-L'appli apparaît alors comme une icône sur l'écran d'accueil.
+**Android (Chrome)** : ouvrir le lien → menu **⋮** → **Installer l'application** (ou « Ajouter à l'écran d'accueil »)
 
 ---
 
 ## 💾 Sauvegarder et transférer ses données
 
-Les données sont sauvegardées **localement dans chaque navigateur**. Pour les retrouver sur un autre appareil :
+Les données sont enregistrées **dans le navigateur de chaque appareil**. Pour les retrouver ailleurs, menu **⋯ Données** :
 
-1. Sur l'appareil actuel → cliquer **"💾 Sauvegarder"** → télécharge un fichier `depenses_sauvegarde.json`
-2. Envoyer ce fichier sur l'autre appareil (par mail, WhatsApp, iCloud, Google Drive…)
-3. Sur le nouvel appareil → cliquer **"📂 Restaurer"** → sélectionner le fichier `.json`
+1. **💾 Sauvegarder tout** → télécharge `depenses_sauvegarde_AAAA-MM-JJ.json` (dépenses, modèle, cases cochées, budgets)
+2. Envoyer ce fichier sur l'autre appareil (mail, WhatsApp, iCloud, Drive…)
+3. Sur l'autre appareil : **📂 Restaurer une sauvegarde**
 
----
-
-## 📊 Exporter vers Excel / Google Sheets
-
-1. Cliquer **"⬇ Exporter CSV"**
-2. Ouvrir le fichier `depenses.csv` dans Excel ou Google Sheets
-3. Toutes les dépenses de tous les mois sont incluses
-
-Pour importer un CSV modifié dans l'application :
-1. Cliquer **"⬆ Importer CSV"**
-2. Sélectionner le fichier `.csv`
-
-Format attendu des colonnes : `Mois ; Date ; Description ; Catégorie ; Montant (€)`
+> Pense à faire une sauvegarde de temps en temps : si tu effaces les données de ton navigateur, elles sont perdues.
 
 ---
 
-## 🛠 Utilisation
+## 📊 Excel / Google Sheets
 
-1. **Télécharger** le fichier `index.html`
-2. **L'ouvrir** dans un navigateur (Chrome, Firefox, Safari, Edge)
-3. Ou accéder directement via le **lien GitHub Pages**
+- **⬇ Exporter les dépenses (CSV)** : toutes les dépenses de tous les mois
+- **⬆ Importer un CSV** : colonnes `Mois ; Date ; Description ; Catégorie ; Montant (€)` — les doublons sont ignorés
 
-Aucune installation, aucun compte, aucune connexion internet requise pour utiliser le fichier en local.
+---
+
+## 🛠 Fichiers
+
+| Fichier | Rôle |
+|---|---|
+| `index.html` | L'application complète |
+| `manifest.webmanifest`, `icon.svg`, `icon-192.png`, `icon-512.png` | Installation sur l'écran d'accueil |
+| `sw.js` | Fonctionnement hors connexion (change `CACHE = 'depenses-vX'` après une modification) |
+
+Les données de l'ancienne version sont reprises automatiquement à la première ouverture.
 
 ---
 
 ## 🔒 Confidentialité
 
-Toutes les données restent **sur votre appareil**. Rien n'est envoyé à un serveur.
+Toutes les données restent **sur ton appareil**. Rien n'est envoyé à un serveur.
 
 ---
 
