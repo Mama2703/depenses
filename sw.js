@@ -1,6 +1,6 @@
 // Permet d'ouvrir l'appli sans connexion internet.
 // Change le numéro de version quand tu modifies index.html pour forcer la mise à jour.
-const CACHE = 'depenses-v2';
+const CACHE = 'depenses-v3';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {

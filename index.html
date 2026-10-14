@@ -777,7 +777,20 @@ function ciHTML(i,paid){
 }
 
 // ══════════ IMPORT / EXPORT ══════════
-function download(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);}
+// Sur tablette / téléphone (surtout iPad et iPhone, et l'appli installée sur l'écran d'accueil),
+// le téléchargement direct est bloqué : on passe par le menu Partager (Enregistrer dans Fichiers, Mail, WhatsApp…).
+const isTouch=matchMedia('(pointer:coarse)').matches||/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+async function download(blob,name){
+  const file=new File([blob],name,{type:blob.type});
+  if(isTouch&&navigator.canShare?.({files:[file]})){
+    try{await navigator.share({files:[file],title:name});toast('Fichier partagé');return;}
+    catch(e){if(e.name==='AbortError')return;}            // annulé par l'utilisateur
+  }
+  const u=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(u),4000);
+  if(isTouch)toast('Si rien ne se télécharge, ouvre le site dans Safari ou Chrome (pas depuis l\'écran d\'accueil)');
+}
 const csvCell=v=>/[;"\n\r]/.test(String(v))?`"${String(v).replace(/"/g,'""')}"`:String(v);
 function exportCSV(){
   const all=S.get(K.exp,{}),rows=[['Mois','Date','Description','Catégorie','Montant (€)']];
